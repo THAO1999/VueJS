@@ -1,0 +1,6 @@
+--------------v-once----------------
+Nếu thay đổi dữ liêu thì sẽ thay đổi toàn bộ dữ liệu
+Nếu dùng v-once thì chỉ thay đổi dữ liệu từ lúc gọi hàm thay đổi, biến ở trước lúc gọi hàm thì sẽ không bị thay đổi
+Nói cách khác thì v-once sẽ cập nhật nội dung cũ
+---------v-html--------
+render ra dạng HTML

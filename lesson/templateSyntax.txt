@@ -1,0 +1,6 @@
+- Sử dụng template cơ bản của HTML để giao thức DOM,không phát sinh thêm code nào khác
+- Biên dich sử dụng DOM ảo kết hợp với hệ thống phản ứng để giúp quản lí đối tượng dế hơn
+- truyền dữ liệu qua các thẻ tag của HTML chứ không truyền qua atribute vd: not herf, alt...
+- muốn làm việc được với atribute thì phải sử dụng v-bind
+- Tất cả dữ liệu truyền qua HTML đều ở dạng dữ liệu thô( text)
+- Nếu muốn truyền dạng HTML thì sử dụng v-html
