@@ -4,3 +4,4 @@
 - muốn làm việc được với atribute thì phải sử dụng v-bind
 - Tất cả dữ liệu truyền qua HTML đều ở dạng dữ liệu thô( text)
 - Nếu muốn truyền dạng HTML thì sử dụng v-html
+- Nếu cùng một obj thì nó sẽ gọi all các method chạy cùng một lúc
