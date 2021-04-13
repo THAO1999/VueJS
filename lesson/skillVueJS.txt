@@ -4,3 +4,111 @@ Nếu dùng v-once thì chỉ thay đổi dữ liệu từ lúc gọi hàm thay 
 Nói cách khác thì v-once sẽ cập nhật nội dung cũ
 ---------v-html--------
 render ra dạng HTML
+----------------------------------------------
+--------------v-once----------------
+Nếu thay đổi dữ liêu thì sẽ thay đổi toàn bộ dữ liệu
+Nếu dùng v-once thì chỉ thay đổi dữ liệu từ lúc gọi hàm thay đổi, biến ở trước lúc gọi hàm thì sẽ không bị thay đổi
+Nói cách khác thì v-once sẽ cập nhật nội dung cũ
+---------v-html--------
+render ra dạng HTML
+----- object event-----
+- quản lí giá trị... của các đối tượng
+event.clientX: tọa độ X: trong phạm vi của tag HTML
+- thay đổi dl, thuộc tính
+- dừng: event.stopPropagation(): dừng diễn biến của event
+---------Event Handling--v-on---------
+- v-on:click // click
+- v-on:mouseover // dê chuột
+- v-onmouseover.stop // dừng dê chuột
+- v-on:keyup: bắt từng kí tự khi nhập
+- v-on:keyup.enter: enter mới xử lí
+-v-on:keyup.enter.space // ấn dấu cách thì xử lí
+------------v-model----
+- bind dữ liệu từ trình duyệt-> thay đổi biến ở dưới-> thay đổi data trên trình duyệt
+- cứ chỗ nào có thuộc tính đó là sẽ thay đổi
+--------computed----------
+- khi nào muốn thực hiện cv riêng rẽ và k muốn sd các hàm khác chạy cùng nó
+- bên trong computed chỉ là property k phải là function mặc dù nó thực hiện như một function-> khi gọi nó thì bỏ ()
+- computed chạy trước method
+- computed chỉ chạy khi thuộc tính của nó thay đổi
+- computed phải tạo sau methods
+-------watch------
+- theo dõi sự thay đổi của biến để làm một hành động nào đó. Biến thay đổi thì nó sẽ thực hiện công việc nào đấy
+--------tương tác với CSS thông qua class atribute
+
+---------v-bind:class-----
+<div v-bind:class="[{ active: isActive }, activeClass, errorClass]"></div>
+      data: {
+              activeClass:"activeClass",
+            isActive: true,
+            errorClass: 'text-danger'
+        },
+		--- v-bind:value----
+- ------v-bind:style--------
+ <div v-bind:style="styleObject"></div>
+data: {
+  styleObject: {
+    color: 'red',
+    fontSize: '13px'
+  }
+}
+
+--------v-if--v-else--
+- có thể sử dụng template để nhóm các element
+- đúng thì nó mới hiển thị
+- v-if lâu hơn v-show vì nó phải khởi tạo lại từ đầu
+
+------v-show--------
+- template không được hỗ trợ
+- sai thì nó sẽ disable đi
+- không làm việc với v-else
+
+------v-for--------
+----v-for with an Array---------
+<li v-for="(item, index) in items">
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+</li>
+data: {
+    parentMessage: 'Parent',
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+  ----v-for with an Object---------
+  
+ ----Array Change Detection-------
+ --Mutation Methods--
+ push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+---Replacing an Array---
+filter(), 
+concat(),
+ slice(),
+ -----v-for with a Range----
+ <div>
+  <span v-for="n in 10">{{ n }} </span>
+</div>
+
+------v-for on a <template>--------
+<ul>
+  <template v-for="item in items">
+    <li>{{ item.msg }}</li>
+    <li class="divider" role="presentation"></li>
+  </template>
+</ul>
+-------v-for with v-if---------
+<li v-for="todo in todos" v-if="!todo.isComplete">
+  {{ todo }}
+</li>
+---------------component--------------
+- tái sử dụng nhiều lần
+- truyền dữ liệu
+ parent=> children: props , children không thể thay đổi dl của parent
+ children=> parent:emit
+

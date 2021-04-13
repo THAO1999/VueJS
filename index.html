@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .do{
+            background-color:red
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-    <!-- <button v-bind:disabled="istrue">rrr</button> -->
-    <p >{{ id }}--{{ id }}-{{ show()}}- {{ id }} </p>
-    <p>{{ id }}</p>
-        <!-- this will no longer update `foo`! -->
-        <!-- <button v-on:click="foot">Change it</button> -->
-
-      </div>
+<div id="component_test">
+    <testcomponent :info='information' ></testcomponent>
+</div>
 </body>
 <script> 
-     var v= new Vue({
-        el: '#app',
-        data: 
-        { id: "chưa thay đổi" },
-     
-        //{ name: "thao" },
-       
-        methods:{
-           show(){
-               this.id="thay đổi rồi"
-               return this.id;
-           }
+    Vue.component('testcomponent', {
+        props: ['info','varible'],
+        template: '<div><h1 v-for="inf in info">{{ inf.name }}</h1><p> {{ varible }}</p></div>'
+    });
+    var vm = new Vue({
+        el: '#component_test',
+        data:{
+            var:"ta thao",
+            information:[
+            {id:1,name:"thao"},
+             { id:2,name: "anh" },
+             { id:3,name: "thien" },
+            ]
         }
-      })
-     
+    });
 </script>
 </html>
